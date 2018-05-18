@@ -9,6 +9,6 @@
             "email": "xagaroo@gmail.com"
         }
     ],
-    "minimum-stability": "dev",
+    "minimum-stability": "dev-master",
     "require": {}
 }

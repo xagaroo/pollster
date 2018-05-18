@@ -1,0 +1,14 @@
+{
+    "name": "xagaroo/pollster",
+    "description": "Easy and simple poll generator for laravel",
+    "type": "laravel",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "xagaroo",
+            "email": "xagaroo@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {}
+}

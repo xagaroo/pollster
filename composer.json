@@ -11,6 +11,14 @@
     ],
     "minimum-stability": "stable",
     "require": {},
+    "autoload": {
+        "classmap": [
+            "src"
+        ],
+        "psr-4": {
+            "Xagaroo\\Pollster\\": "src/"
+        }
+    },
     "extra": {
         "laravel": {
             "providers": [

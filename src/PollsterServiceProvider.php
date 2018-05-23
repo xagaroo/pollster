@@ -21,7 +21,10 @@ class PollsterServiceProvider extends ServiceProvider
 
 		$this->publishes([
 			__DIR__.'/views' => resource_path('views/xagaroo/pollster'),
-		]);
+		], 'views');
+		$this->publishes([
+			__DIR__ . '/migrations' => $this->app->databasePath() . '/migrations'
+		], 'migrations');
 	}
 
 	/**

@@ -1,6 +1,6 @@
 <?php
 Route::group(['middleware' => ['web']], function () {
-
+	
 	Route::get('poll/ok', function() {
 		return view('pollster::ok');
 	});
@@ -11,7 +11,12 @@ Route::group(['middleware' => ['web']], function () {
 		return view('pollster::form', compact('poll'));
 	});
 
+
+
 	Route::post('poll/{id}', function(Illuminate\Http\Request $request, $id) {
+		$request->validate([
+			'question.*' => 'required'
+		]);
 
 		$user = auth()->user();
 
@@ -43,7 +48,6 @@ Route::group(['middleware' => ['web']], function () {
 		}
 
 		return redirect('/poll/ok');
-
 	});
 
 });

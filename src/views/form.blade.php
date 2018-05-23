@@ -7,9 +7,6 @@
 			<h4>{{$poll->name}}</h4>
 		</div>
 	</div>
-
-	<hr>
-	
 	<form role="form" method="POST" action="/poll/{{$poll->id}}">
 		{{ csrf_field() }}
 

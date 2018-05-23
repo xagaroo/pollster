@@ -20,7 +20,7 @@ class PollsterServiceProvider extends ServiceProvider
 		$this->loadViewsFrom(__DIR__.'/views', 'pollster');
 
 		$this->publishes([
-			__DIR__.'/views' => resource_path('views/xagaroo/pollster'),
+			__DIR__.'/views' => resource_path('views/vendor/pollster'),
 		], 'views');
 		$this->publishes([
 			__DIR__ . '/migrations' => $this->app->databasePath() . '/migrations'

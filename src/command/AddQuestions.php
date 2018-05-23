@@ -35,17 +35,17 @@ class AddQuestions extends Command
 
 			$question = $this->ask('Question number ' . $order);
 
-			$kind = $this->choice('Kind of question', ['text', 'large_text', 'yes_no', 'score_0_5', 'selection']);
+			$kind = $this->choice('Kind of question', ['text', 'large_text', 'yes_no', 'score_0_5', 'selection', 'selection_multiple']);
 
 			$optionArray = [];
 			if ($kind == "selection")
 			{
 				do {
-					$option = $this->ask('Add an option: (Leave blank to quit)');
+					$option = $this->ask('Add an option: (Write quit to leave)', 'quit');
 					if ($option != "") {
 						$optionArray[] = $option;	
 					}
-				} while ($option != "");
+				} while ($option != "quit");
 			}
 
 			$pq = PollsQuestion::create([
@@ -58,7 +58,7 @@ class AddQuestions extends Command
 			if (count($optionArray) > 0) {
 				foreach ($optionArray as $key=>$option) {
 					PollsAnswer::create([
-						'poll_question_id' => $pq->id,
+						'polls_question_id' => $pq->id,
 						'order' => $key,
 						'text' => $option
 					]);
